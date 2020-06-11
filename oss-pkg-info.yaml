@@ -1,0 +1,4 @@
+Open Source Software Package:
+- name: webOSOSE-openwnn-webos
+  source: https://github.com/webosose/openwnn-webos
+  license: Apache-2.0
