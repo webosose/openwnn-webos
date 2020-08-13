@@ -25,7 +25,7 @@
 class OpenWnnClauseConverterPrivate
 {
 public:
-    OpenWnnClauseConverterPrivate()
+    OpenWnnClauseConverterPrivate() : mDictionary(nullptr)
     { }
 
     bool singleClauseConvert(vector<WnnClause> &clauseList, const wstring &input,
