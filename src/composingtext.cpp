@@ -1,7 +1,7 @@
 /*
  * C++ implementation of OpenWnn library
  *
- * Copyright (c) 2019 LG Electronics, Inc.
+ * Copyright (c) 2019-2023 LG Electronics, Inc.
  * Copyright (C) 2008-2012  OMRON SOFTWARE Co., Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
