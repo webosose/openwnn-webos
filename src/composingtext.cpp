@@ -129,9 +129,8 @@ void ComposingText::deleteStrSegment0(ComposingText::TextLayer layer, int from, 
         }
     }
     for (int i = from; i <= to; i++) {
-        for (int i = from; i <= to; i++) {
-            if (from >= strLayer.size())
-                break;
+        if (from >= strLayer.size())
+            break;
 
         strLayer.erase(strLayer.begin() + from);
     }
