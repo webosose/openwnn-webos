@@ -129,6 +129,10 @@ void ComposingText::deleteStrSegment0(ComposingText::TextLayer layer, int from, 
         }
     }
     for (int i = from; i <= to; i++) {
+        for (int i = from; i <= to; i++) {
+            if (from >= strLayer.size())
+                break;
+
         strLayer.erase(strLayer.begin() + from);
     }
 }
@@ -203,6 +207,9 @@ void ComposingText::insertStrSegment(TextLayer layer, const StrSegment& str)
         return;
 
     int cursor = mCursor[layer];
+    if (cursor >= mStringLayer[layer].size())
+        return;
+
     mStringLayer[layer].insert(mStringLayer[layer].begin()+cursor, str);
     modifyUpper(layer, cursor, 1, 0);
     setCursor(layer, cursor + 1);
@@ -212,6 +219,9 @@ void ComposingText::insertStrSegment(TextLayer layer1, TextLayer layer2, const S
 {
 
     if (layer1 < LAYER0 || layer1 >= MAX_LAYER || layer2 < LAYER0 || layer2 >= MAX_LAYER)
+        return;
+
+    if (mCursor[layer1] >= mStringLayer[layer1].size())
         return;
 
     mStringLayer[layer1].insert(mStringLayer[layer1].begin()+mCursor[layer1], str);
