@@ -205,8 +205,8 @@ void ComposingText::insertStrSegment(TextLayer layer, const StrSegment& str)
     if (layer < LAYER0 || layer >= MAX_LAYER)
         return;
 
-    int cursor = mCursor[layer];
-    if (cursor >= mStringLayer[layer].size())
+    int& cursor = mCursor[layer];
+    if (cursor > mStringLayer[layer].size())
         return;
 
     mStringLayer[layer].insert(mStringLayer[layer].begin()+cursor, str);
@@ -220,7 +220,7 @@ void ComposingText::insertStrSegment(TextLayer layer1, TextLayer layer2, const S
     if (layer1 < LAYER0 || layer1 >= MAX_LAYER || layer2 < LAYER0 || layer2 >= MAX_LAYER)
         return;
 
-    if (mCursor[layer1] >= mStringLayer[layer1].size())
+    if (mCursor[layer1] > mStringLayer[layer1].size())
         return;
 
     mStringLayer[layer1].insert(mStringLayer[layer1].begin()+mCursor[layer1], str);
