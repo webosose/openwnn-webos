@@ -65,8 +65,8 @@
  */
 typedef struct {
     int         size;
-    NJ_UINT8   *from;
-    NJ_UINT8   *to;
+   const  NJ_UINT8   *from;
+   const  NJ_UINT8   *to;
 } PREDEF_APPROX_PATTERN;
 
 #include "predef_table.h"
